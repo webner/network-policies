@@ -1,0 +1,15 @@
+apiVersion: network.openshift.io/v1
+kind: EgressNetworkPolicy
+metadata:
+  name: default
+spec:
+  egress:
+  - to:
+      cidrSelector: 10.0.0.0/8
+    type: Deny
+  - to:
+      cidrSelector: 192.168.0.0/16
+    type: Deny
+  - to:
+      cidrSelector: 172.16.0.0/12
+    type: Deny
